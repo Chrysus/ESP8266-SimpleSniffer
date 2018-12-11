@@ -34,7 +34,7 @@
 #define MODE_DISABLE 0
 #define MODE_ENABLE  1
 
-#define CHANNEL	     8
+#define CHANNEL	     11
 
 /*
  *  Global Variables
@@ -150,17 +150,17 @@ void promiscuous_callback(uint8_t *buf, uint16_t len) {
  */
 
  void print_report() {
-   char datagram_string_012[26];
-   char datagram_string_060[26];
-   char datagram_string_128[26];
-   char datagram_string_other[26];
-   char datagram_string_total[26];
+   char datagram_string_012[32];
+   char datagram_string_060[32];
+   char datagram_string_128[32];
+   char datagram_string_other[32];
+   char datagram_string_total[32];
 
-   sprintf(datagram_string_012, "Datagram    12:    %5lu\n", gDatagramCount_012);
-   sprintf(datagram_string_060, "Datagram    62:    %5lu\n", gDatagramCount_060);
-   sprintf(datagram_string_128, "Datagram   128:    %5lu\n", gDatagramCount_128);
-   sprintf(datagram_string_other, "Datagram Other:    %5lu\n", gDatagramCount_Other);
-   sprintf(datagram_string_total, "Datagram Total:    %5lu\n", gCallbackCount);
+   sprintf(datagram_string_012, "Datagram    12:    %7lu\n", gDatagramCount_012);
+   sprintf(datagram_string_060, "Datagram    62:    %7lu\n", gDatagramCount_060);
+   sprintf(datagram_string_128, "Datagram   128:    %7lu\n", gDatagramCount_128);
+   sprintf(datagram_string_other, "Datagram Other:    %7lu\n", gDatagramCount_Other);
+   sprintf(datagram_string_total, "Datagram Total:    %7lu\n", gCallbackCount);
    
    Serial.println("\n-------------------------------------------------------------------------------------\n");
    Serial.print(datagram_string_012);
